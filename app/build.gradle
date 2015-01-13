@@ -1,0 +1,28 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "com.zenvia.sabores"
+        minSdkVersion 9
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+
+    productFlavors {
+        free {
+            buildConfigField "Boolean", "FREE_APP", "true"
+        }
+        zenvia {
+            buildConfigField "Boolean", "FREE_APP", "false"
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:21.0.2'
+    compile project(':galeria')
+}
